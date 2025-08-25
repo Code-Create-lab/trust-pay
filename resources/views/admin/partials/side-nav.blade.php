@@ -441,7 +441,7 @@
                                 'icon'      => "menu-icon las la-user-edit",
                                 'links'     => [
                                     [
-                                        'title'     => "Active Merchants",
+                                        'title'     => "Active Distributor",
                                         'route'     => "admin.merchants.active",
                                     ],
                                     [
@@ -458,11 +458,11 @@
                                         'route'     => "admin.merchants.index",
                                     ],
                                     [
-                                        'title'     => "Email To Merchants",
+                                        'title'     => "Email To Distributor",
                                         'route'     => "admin.merchants.email.merchants",
                                     ],
                                     [
-                                        'title'     => "Banned Merchants",
+                                        'title'     => "Banned Distributor",
                                         'route'     => "admin.merchants.banned",
                                     ]
                                 ],

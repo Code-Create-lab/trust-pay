@@ -33,7 +33,7 @@
                         <select class="form--control nice-select" name="user_type">
                             <option selected disabled>{{ __("Select Merchants") }}</option>
                             <option value="all">{{ __("All Merchants") }}</option>
-                            <option value="active">{{ __("Active Merchants") }}</option>
+                            <option value="active">{{ __("Active Distributor") }}</option>
                             <option value="email_unverified">{{ __("Email Unverified") }}</option>
                             <option value="kyc_unverified">{{ __("Kyc Unverified") }}</option>
                             <option value="banned">{{ __("Banned Merchants") }}</option>
