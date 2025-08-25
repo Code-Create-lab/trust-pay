@@ -141,7 +141,7 @@
                     <div class="dashbord-item">
                         <div class="dashboard-content">
                             <div class="left">
-                                <h6 class="title">{{ __("Total Merchants") }}</h6>
+                                <h6 class="title">{{ __("Total Distributors") }}</h6>
                                 <div class="user-info">
                                     <h2 class="user-count">{{ $data['total_merchants'] }}</h2>
                                 </div>
@@ -333,14 +333,14 @@
             <div class="col-lg-4 mb-15">
                 <div class="chart-wrapper">
                     <div class="chart-area-header">
-                        <h5 class="title">{{ __("Merchant Analytics") }}</h5>
+                        <h5 class="title">{{ __("Distributor Analytics") }}</h5>
                     </div>
                     <div class="chart-container">
                         <div id="merchants" data-chart_merchant="{{ json_encode($data['chart_merchant']) }}" class="balance-chart"></div>
                     </div>
                     <div class="chart-area-footer">
                         <div class="chart-btn">
-                            <a href="{{ setRoute('admin.merchants.index') }}" class="btn--base w-100">{{__("View Merchants")}}</a>
+                            <a href="{{ setRoute('admin.merchants.index') }}" class="btn--base w-100">{{__("View Distributors")}}</a>
                         </div>
                     </div>
                 </div>
