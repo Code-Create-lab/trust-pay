@@ -36,7 +36,7 @@ class MerchantCareController extends Controller
 {
     public function index()
     {
-        $page_title = __("All Merchants");
+        $page_title = __("All Distributor");
         $merchants = Merchant::orderBy('id', 'desc')->paginate(12);
         return view('admin.sections.merchant-care.index', compact(
             'page_title',
@@ -45,7 +45,7 @@ class MerchantCareController extends Controller
     }
     public function active()
     {
-        $page_title = __("Active Merchants");
+        $page_title = __("Active Distributor");
         $merchants = Merchant::active()->orderBy('id', 'desc')->paginate(12);
         return view('admin.sections.merchant-care.index', compact(
             'page_title',
@@ -54,7 +54,7 @@ class MerchantCareController extends Controller
     }
     public function banned()
     {
-        $page_title = __("Banned Merchants");
+        $page_title = __("Banned Distributor");
         $merchants = Merchant::banned()->orderBy('id', 'desc')->paginate(12);
         return view('admin.sections.merchant-care.index', compact(
             'page_title',
@@ -63,7 +63,7 @@ class MerchantCareController extends Controller
     }
     public function emailUnverified()
     {
-        $page_title = __("Email Unverified Merchants");
+        $page_title = __("Email Unverified Distributor");
         $merchants =  Merchant::emailUnverified()->orderBy('id', 'desc')->paginate(12);
         return view('admin.sections.merchant-care.index', compact(
             'page_title',
@@ -72,7 +72,7 @@ class MerchantCareController extends Controller
     }
     public function SmsUnverified()
     {
-        $page_title = __("SMS Unverified Merchants");
+        $page_title = __("SMS Unverified Distributor");
         $merchants =  Merchant::smsUnverified()->orderBy('id', 'desc')->paginate(12);
         return view('admin.sections.merchant-care.index', compact(
             'page_title',
@@ -81,7 +81,7 @@ class MerchantCareController extends Controller
     }
     public function KycUnverified()
     {
-        $page_title = __("KYC Unverified Merchants");
+        $page_title = __("KYC Unverified Distributor");
         $merchants = Merchant::kycUnverified()->orderBy('id', 'desc')->paginate(8);
         return view('admin.sections.merchant-care.index', compact(
             'page_title',
@@ -90,7 +90,7 @@ class MerchantCareController extends Controller
     }
     public function emailAllUsers()
     {
-        $page_title = __("Email To Merchants");
+        $page_title = __("Email To Distributor");
         return view('admin.sections.merchant-care.email-to-users', compact(
             'page_title',
         ));
