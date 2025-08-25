@@ -41,7 +41,7 @@
 <meta name='DC.title' content='Mahesh Jagdale'>
 
 <meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="images/ynb_4062_1_logo.png">
+<meta name="msapplication-TileImage" content="public/images/ynb_4062_1_logo.png">
 <meta name="theme-color" content="#ffffff">
 <meta name="Generator" content="Dreamviwer" />
 <!-- Geo tags -->
@@ -53,54 +53,54 @@
 <meta property="og:title" content="Electricity Bill Payment, Mobile Bill Payment, Gas Bill Payment, BroadBand Bill Payment, Landline Bill Payment, Mobile Recharge, DTH Recharge"/>
 <meta property="og:type" content="article"/>
 <meta property="og:url" content="https://ynbpay.in/"/>
-<meta property="og:image" content="https://ynbpay.in/images/ynb_4062_1_logo.png"/>
+<meta property="og:image" content="https://ynbpay.in/public/images/ynb_4062_1_logo.png"/>
 <meta property="og:site_name" content="Electricity Bill Payment, Mobile Bill Payment, Gas Bill Payment, BroadBand Bill Payment, Landline Bill Payment, Mobile Recharge, DTH Recharge"/>
 <meta property="fb:app_id" content="203236460445170"/>
 <meta property="og:description" content="Electricity Bill Payment, Mobile Bill Payment, Gas Bill Payment, BroadBand Bill Payment, Landline Bill Payment, Mobile Recharge, DTH Recharge"/>
 
 
 <meta name="twitter:dnt" content="on">
-<link rel="apple-touch-icon" sizes="57x57" href="images/apple-icon-57x57.png">
-<link rel="apple-touch-icon" sizes="60x60" href="images/apple-icon-60x60.png">
-<link rel="apple-touch-icon" sizes="72x72" href="images/apple-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="76x76" href="images/apple-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="114x114" href="images/apple-icon-114x114.png">
-<link rel="apple-touch-icon" sizes="120x120" href="images/apple-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="144x144" href="images/apple-icon-144x144.png">
-<link rel="apple-touch-icon" sizes="152x152" href="images/apple-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="images/apple-icon-180x180.png">
-<link rel="icon" type="image/png" sizes="192x192"  href="images/android-icon-192x192.png">
-<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="96x96" href="images/favicon-96x96.png">
-<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
-<link rel="manifest" href="images/manifest.json">
+<link rel="apple-touch-icon" sizes="57x57" href="public/images/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="public/images/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="public/images/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="public/images/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="public/images/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="public/images/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="public/images/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="public/images/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="public/images/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="public/images/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="public/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="public/images/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="public/images/favicon-16x16.png">
+<link rel="manifest" href="public/images/manifest.json">
 
-<link rel="shortcut icon" href="images/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortcut icon" href="public/images/favicon.ico" type="image/vnd.microsoft.icon" />
 <link rel="canonical" href="https://ynbpay.in/" />
 <link rel="shortlink" href="https://ynbpay.in/index.php" />
 
 
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="public/images/favicon.ico" type="image/x-icon">
     <!-- /Favicon -->
 
     <!-- All CSS -->
 
     <!-- Vendor Css -->
-    <link rel="stylesheet" href="css/vendors.css">
+    <link rel="stylesheet" href="public/css/vendors.css">
     <!-- /Vendor Css -->
 
     <!-- Plugin Css -->
-    <link rel="stylesheet" href="css/plugins.css">
+    <link rel="stylesheet" href="public/css/plugins.css">
     <!-- Plugin Css -->
 
     <!-- Icons Css -->
-    <link rel="stylesheet" href="css/icons.css">
+    <link rel="stylesheet" href="public/css/icons.css">
     <!-- /Icons Css -->
 
     <!-- Style Css -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="public/css/style.css">
     <!-- /Style Css -->
 
     <!-- /All CSS -->
@@ -200,7 +200,7 @@
     </div>    <!-- /Header -->
 
     <!-- Hero -->
-    <div class="hero-1 oh pos-rel" style="background: url('images/hero/banner-bg.png')">
+    <div class="hero-1 oh pos-rel" style="background: url('public/images/hero/banner-bg.png')">
         <!-- container -->
         <div class="container">
             <!-- row -->
@@ -222,7 +222,7 @@
                 <!-- col -->
                 <div class="col-lg-7 d-lg-block">
                     <div class="hero-1-thumb-15 wow fadeInUp animated" data-wow-delay="0.4s">
-                        <img class="img-fluid wow fadeInRight animated" src="images/1.gif" alt="hero-1">
+                        <img class="img-fluid wow fadeInRight animated" src="public/images/1.gif" alt="hero-1">
                     </div>
                 </div>
                 <!-- /col -->
@@ -321,7 +321,7 @@
                     <div class="single-services">
                         <div class="image">
                             <a href="#">
-                                <img src="images/032-lightbulb-1.png" alt="image">
+                                <img src="public/images/032-lightbulb-1.png" alt="image">
                             </a>
                         </div>
                         <h3>
@@ -335,7 +335,7 @@
                     <div class="single-services">
                         <div class="image">
                             <a href="#">
-                                <img src="images/031-landline-1.png" alt="image">
+                                <img src="public/images/031-landline-1.png" alt="image">
                             </a>
                         </div>
                         <h3>
@@ -349,7 +349,7 @@
                     <div class="single-services">
                         <div class="image">
                             <a href="#">
-                                <img src="images/035-gas-1.png" alt="image">
+                                <img src="public/images/035-gas-1.png" alt="image">
                             </a>
                         </div>
                         <h3>
@@ -366,7 +366,7 @@
                     <div class="single-services">
                         <div class="image">
                             <a href="#">
-                                <img src="images/033-router.png" alt="image">
+                                <img src="public/images/033-router.png" alt="image">
                             </a>
                         </div>
                         <h3>
@@ -382,7 +382,7 @@
                     <div class="single-services">
                         <div class="image">
                             <a href="#">
-                                <img src="images/031-landline-1.png" alt="image">
+                                <img src="public/images/031-landline-1.png" alt="image">
                             </a>
                         </div>
                         <h3>
@@ -396,7 +396,7 @@
                     <div class="single-services">
                         <div class="image">
                             <a href="#">
-                                <img src="images/services/04.png" alt="image">
+                                <img src="public/images/services/04.png" alt="image">
                             </a>
                         </div>
                         <h3>
@@ -421,7 +421,7 @@
                 <!-- col -->
                 <div class="col-lg-6 align-self-center">
                     <div class="mb-20">
-                        <img src="images/bg/about.png" class="img-fluid  wow fadeInLeft animated" data-wow-delay="0.2s"
+                        <img src="public/images/bg/about.png" class="img-fluid  wow fadeInLeft animated" data-wow-delay="0.2s"
                             alt="image">
                     </div>
                 </div>
@@ -491,7 +491,7 @@
                     <div class="single-services-item">
                         <!--<div class="image">
                             <a href="#">
-                                <img src="images/services/001.jpg" alt="image">
+                                <img src="public/images/services/001.jpg" alt="image">
                             </a>
                         </div>, Mobile, Gas, BroadBand, Landline Bill Pay | Mobile Recharge | DTH Recharge | Ynbpay.in | BBPS-->
                         <div class="content">
@@ -508,7 +508,7 @@
                     <div class="single-services-item">
                        <!-- <div class="image">
                             <a href="#">
-                                <img src="images/services/002.jpg" alt="image">
+                                <img src="public/images/services/002.jpg" alt="image">
                             </a>
                         </div>-->
                         <div class="content">
@@ -525,7 +525,7 @@
                     <div class="single-services-item">
                         <!--<div class="image">
                             <a href="#">
-                                <img src="images/services/003.jpg" alt="image">
+                                <img src="public/images/services/003.jpg" alt="image">
                             </a>
                         </div>-->
                         <div class="content">
@@ -542,7 +542,7 @@
                     <div class="single-services-item">
                         <!--<div class="image">
                             <a href="#">
-                                <img src="images/services/004.jpg" alt="image">
+                                <img src="public/images/services/004.jpg" alt="image">
                             </a>
                         </div>-->
                         <div class="content">
@@ -559,7 +559,7 @@
                     <div class="single-services-item">
                         <!--<div class="image">
                             <a href="#">
-                                <img src="images/services/005.jpg" alt="image">
+                                <img src="public/images/services/005.jpg" alt="image">
                             </a>
                         </div>-->
                         <div class="content">
@@ -576,7 +576,7 @@
                     <div class="single-services-item">
                        <!-- <div class="image">
                             <a href="#">
-                                <img src="images/services/006.jpg" alt="image">
+                                <img src="public/images/services/006.jpg" alt="image">
                             </a>
                         </div>-->
                         <div class="content">
@@ -606,7 +606,7 @@
                 <!-- col -->
                 <div class="col-lg-6">
                     <div class="why-choose-us-img">
-                        <img src="images/bg/choose-us.png" alt="Image">
+                        <img src="public/images/bg/choose-us.png" alt="Image">
                     </div>
                 </div>
                 <!-- /col -->
@@ -683,7 +683,7 @@ and services digitally, that are fairly priced and of high quality. </li>
                         </ul>
                         <div class="mt-4 wow fadeInUp animated" data-wow-delay="0.6s">
                             <a href="#" class="btn theme-btn-1">
-                                <img src="images/svg/android.svg" alt="">
+                                <img src="public/images/svg/android.svg" alt="">
                             </a>
 
                         </div>
@@ -693,7 +693,7 @@ and services digitally, that are fairly priced and of high quality. </li>
                 <!-- col -->
                 <div class="col-xl-5 col-lg-6 col-md-6">
                     <div class="download-1-img">
-                        <img class=" img-fluid" src="images/bg/download.png" alt="">
+                        <img class=" img-fluid" src="public/images/bg/download.png" alt="">
                     </div>
                 </div>
                 <!-- /col -->
@@ -845,7 +845,7 @@ and services digitally, that are fairly priced and of high quality. </li>
     <!-- JS -->
 
     <!-- Vendor Js -->
-    <script src="js/vendors.js"></script>
+    <script src="public/js/vendors.js"></script>
     <!-- /Vendor js -->
 <script>
     var x= document.getElementById("location");
@@ -864,11 +864,11 @@ and services digitally, that are fairly priced and of high quality. </li>
      }
 </script>
     <!-- Plugins Js -->
-    <script src="js/plugins.js"></script>
+    <script src="public/js/plugins.js"></script>
     <!-- /Plugins Js -->
 
     <!-- Main JS -->
-    <script src="js/main.js"></script>
+    <script src="public/js/main.js"></script>
     <!-- /Main JS -->
 
     <!-- /JS -->
