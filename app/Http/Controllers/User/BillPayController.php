@@ -231,6 +231,8 @@ class BillPayController extends Controller
     //start automatic bill pay
     public function automaticBillPay($request_data){
 
+
+
         $user = auth()->user();
         try{
         $biller = (new UtilityHelper())->getSingleBiller($request_data['bill_type']);
@@ -263,6 +265,8 @@ class BillPayController extends Controller
        $charges = $this->automaticBillPayCharge($userWallet,$biller,$bill_amount);
        $minLimit =  $biller['minLocalTransactionAmount'];
        $maxLimit =  $biller['maxLocalTransactionAmount'];
+
+
        if($bill_amount < $minLimit || $bill_amount > $maxLimit) {
            return back()->with(['error' => [__("Please follow the transaction limit")]]);
        }
@@ -283,6 +287,7 @@ class BillPayController extends Controller
 
         ];
         $payBill = (new UtilityHelper())->payUtilityBill($payBillData);
+         dd($payBill);
         if(isset( $payBill['status']) && $payBill['status'] === false){
             if($payBill['message'] === "The provided reference ID has already been used. Please provide another one."){
                 $errorMessage = __("Bill payment already taken for")." ".$biller['name']." ".$request_data['bill_month'];
@@ -314,6 +319,7 @@ class BillPayController extends Controller
                 }
 
             }catch(Exception $e){}
+
             //admin notification
             $this->adminNotificationAutomatic($trx_id,$charges,$biller,$request_data,$user,$payBill);
              // Dispatch the job to process the payment status

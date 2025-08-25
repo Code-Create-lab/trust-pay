@@ -37,7 +37,7 @@
                                 </ul>
                             </td>
                             <td>{{ __("Server App Name") }}</td>
-                            <td><span>{{ env("APP_NAME","AppDevs") }}</span></td>
+                            <td><span>{{ env("APP_NAME","GrowessGroup") }}</span></td>
                         </tr>
                         <tr>
                             <td>

@@ -15,7 +15,7 @@
                 'url' => setRoute('admin.dashboard'),
             ],
         ],
-        'active' => __('Merchant Care'),
+        'active' => __('Distributor Care'),
     ])
 @endsection
 
@@ -23,10 +23,16 @@
     <div class="table-area">
         <div class="table-wrapper">
             <div class="table-header">
-                <h5 class="title">{{ __("All Merchants") }}</h5>
+                <h5 class="title">{{ __("All Distributor") }}</h5>
                 <div class="table-btn-area">
                     @include('admin.components.search-input',[
                         'name'  => 'merchant_search',
+                    ])
+                     @include('admin.components.link.add-default',[
+                        'href'          => "#admin-add",
+                        'class'         => "modal-btn",
+                        'text'          => __("Add Admin"),
+                        'permission'    => "admin.admins.admin.store"
                     ])
                 </div>
             </div>
@@ -34,6 +40,12 @@
                 @include('admin.components.data-table.merchant-table',compact('merchants'))
             </div>
         </div>
+
+         {{-- Admin Add Modal --}}
+    @include('admin.components.modals.add-distributor')
+
+    {{-- Admin Edit Modal --}}
+    {{-- @include('admin.components.modals.edit-admin',compact('admin_roles')) --}}
         {{ get_paginate($merchants) }}
     </div>
 @endsection

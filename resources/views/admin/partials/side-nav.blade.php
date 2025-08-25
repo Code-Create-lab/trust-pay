@@ -31,7 +31,7 @@
                 ])
 
                 {{-- Section Default --}}
-                @include('admin.components.side-nav.link-group',[
+                {{-- @include('admin.components.side-nav.link-group',[
                     'group_title'       => __("DEFAULT"),
                     'group_links'       => [
                         [
@@ -65,9 +65,9 @@
                             'icon'      => "menu-icon las la-gift",
                         ],
                     ]
-                ])
+                ]) --}}
                 {{-- manage Bill Pay & Mobile top Up Methods  --}}
-                @include('admin.components.side-nav.link-group',[
+                {{-- @include('admin.components.side-nav.link-group',[
                     'group_links'       => [
                         'dropdown'      => [
                             [
@@ -102,11 +102,11 @@
                         ],
 
                     ]
-                ])
+                ]) --}}
 
 
                 {{-- Section Transaction & Logs --}}
-                @include('admin.components.side-nav.link-group',[
+                {{-- @include('admin.components.side-nav.link-group',[
                     'group_title'       => __("TRANSACTIONS & LOGS"),
                     'group_links'       => [
                         'dropdown'      => [
@@ -369,75 +369,75 @@
                         ],
 
                     ]
-                ])
+                ]) --}}
                 {{-- Interface Panel --}}
                 @include('admin.components.side-nav.link-group',[
                     'group_title'       => __("Interface Panel"),
                     'group_links'       => [
                         'dropdown'      => [
-                            [
-                                'title'     => __("User Care"),
-                                'icon'      => "menu-icon las la-user-edit",
-                                'links'     => [
-                                    [
-                                        'title'     => "Active Users",
-                                        'route'     => "admin.users.active",
-                                    ],
-                                    [
-                                        'title'     => "Email unverified",
-                                        'route'     => "admin.users.email.unverified",
-                                    ],
+                            // [
+                            //     'title'     => __("User Care"),
+                            //     'icon'      => "menu-icon las la-user-edit",
+                            //     'links'     => [
+                            //         [
+                            //             'title'     => "Active Users",
+                            //             'route'     => "admin.users.active",
+                            //         ],
+                            //         [
+                            //             'title'     => "Email unverified",
+                            //             'route'     => "admin.users.email.unverified",
+                            //         ],
 
-                                    [
-                                        'title'     => "KYC Unverified",
-                                        'route'     => "admin.users.kyc.unverified",
-                                    ],
-                                    [
-                                        'title'     => "All Users",
-                                        'route'     => "admin.users.index",
-                                    ],
-                                    [
-                                        'title'     => "Email To Users",
-                                        'route'     => "admin.users.email.users",
-                                    ],
-                                    [
-                                        'title'     => "Banned Users",
-                                        'route'     => "admin.users.banned",
-                                    ]
-                                ],
-                            ],
+                            //         [
+                            //             'title'     => "KYC Unverified",
+                            //             'route'     => "admin.users.kyc.unverified",
+                            //         ],
+                            //         [
+                            //             'title'     => "All Users",
+                            //             'route'     => "admin.users.index",
+                            //         ],
+                            //         [
+                            //             'title'     => "Email To Users",
+                            //             'route'     => "admin.users.email.users",
+                            //         ],
+                            //         [
+                            //             'title'     => "Banned Users",
+                            //             'route'     => "admin.users.banned",
+                            //         ]
+                            //     ],
+                            // ],
+                            // [
+                            //     'title'     => __("Agent Care"),
+                            //     'icon'      => "menu-icon las la-user-edit",
+                            //     'links'     => [
+                            //         [
+                            //             'title'     => "Active Agents",
+                            //             'route'     => "admin.agents.active",
+                            //         ],
+                            //         [
+                            //             'title'     => "Email unverified",
+                            //             'route'     => "admin.agents.email.unverified",
+                            //         ],
+                            //         [
+                            //             'title'     => "KYC Unverified",
+                            //             'route'     => "admin.agents.kyc.unverified",
+                            //         ],
+                            //         [
+                            //             'title'     => "All Agents",
+                            //             'route'     => "admin.agents.index",
+                            //         ],
+                            //         [
+                            //             'title'     => "Email To Agents",
+                            //             'route'     => "admin.agents.email.agents",
+                            //         ],
+                            //         [
+                            //             'title'     => "Banned Agents",
+                            //             'route'     => "admin.agents.banned",
+                            //         ]
+                            //     ],
+                            // ],
                             [
-                                'title'     => __("Agent Care"),
-                                'icon'      => "menu-icon las la-user-edit",
-                                'links'     => [
-                                    [
-                                        'title'     => "Active Agents",
-                                        'route'     => "admin.agents.active",
-                                    ],
-                                    [
-                                        'title'     => "Email unverified",
-                                        'route'     => "admin.agents.email.unverified",
-                                    ],
-                                    [
-                                        'title'     => "KYC Unverified",
-                                        'route'     => "admin.agents.kyc.unverified",
-                                    ],
-                                    [
-                                        'title'     => "All Agents",
-                                        'route'     => "admin.agents.index",
-                                    ],
-                                    [
-                                        'title'     => "Email To Agents",
-                                        'route'     => "admin.agents.email.agents",
-                                    ],
-                                    [
-                                        'title'     => "Banned Agents",
-                                        'route'     => "admin.agents.banned",
-                                    ]
-                                ],
-                            ],
-                            [
-                                'title'     => __("Merchant Care"),
+                                'title'     => __("Distributor Care"),
                                 'icon'      => "menu-icon las la-user-edit",
                                 'links'     => [
                                     [
@@ -467,28 +467,28 @@
                                     ]
                                 ],
                             ],
-                            [
-                                'title'             => __("Admin Care"),
-                                'icon'              => "menu-icon las la-user-shield",
-                                'links'     => [
-                                    [
-                                        'title'     => "All Admin",
-                                        'route'     => "admin.admins.index",
-                                    ],
-                                    [
-                                        'title'     => "Admin Role",
-                                        'route'     => "admin.admins.role.index",
-                                    ],
-                                    [
-                                        'title'     => "Role Permission",
-                                        'route'     => "admin.admins.role.permission.index",
-                                    ],
-                                    [
-                                        'title'     => "Email To Admin",
-                                        'route'     => "admin.admins.email.admins",
-                                    ]
-                                ],
-                            ],
+                            // [
+                            //     'title'             => __("Admin Care"),
+                            //     'icon'              => "menu-icon las la-user-shield",
+                            //     'links'     => [
+                            //         [
+                            //             'title'     => "All Admin",
+                            //             'route'     => "admin.admins.index",
+                            //         ],
+                            //         [
+                            //             'title'     => "Admin Role",
+                            //             'route'     => "admin.admins.role.index",
+                            //         ],
+                            //         [
+                            //             'title'     => "Role Permission",
+                            //             'route'     => "admin.admins.role.permission.index",
+                            //         ],
+                            //         [
+                            //             'title'     => "Email To Admin",
+                            //             'route'     => "admin.admins.email.admins",
+                            //         ]
+                            //     ],
+                            // ],
 
                         ],
 
@@ -496,7 +496,7 @@
                 ])
 
                 {{-- Section Settings --}}
-                @include('admin.components.side-nav.link-group',[
+                {{-- @include('admin.components.side-nav.link-group',[
                     'group_title'       => __("Settings"),
                     'group_links'       => [
                         'dropdown'      => [
@@ -553,10 +553,10 @@
                     'route'     => 'admin.languages.index',
                     'title'     => "Languages",
                     'icon'      => "menu-icon las la-language",
-                ])
+                ]) --}}
 
                 {{-- Verification Center --}}
-                @include('admin.components.side-nav.link-group',[
+                {{-- @include('admin.components.side-nav.link-group',[
                     'group_title'       => __("VERIFICATION CENTER"),
                     'group_links'       => [
                         'dropdown'      => [
@@ -767,7 +767,7 @@
                             </li>
                         </ul>
                     </li>
-                    {{-- //money-out --}}
+                    //money-out
                     @php
                         $payment_money_out_childs  = [
                             setRoute('admin.payment.gateway.view',['withdraw','automatic']),
@@ -793,10 +793,10 @@
                             </li>
                         </ul>
                     </li>
-                @endif
+                @endif --}}
 
                 {{-- Notifications --}}
-                @include('admin.components.side-nav.link-group',[
+                {{-- @include('admin.components.side-nav.link-group',[
                     'group_title'       => __("NOTIFICATION-UPPER"),
                     'group_links'       => [
                         'dropdown'      => [
@@ -855,7 +855,7 @@
                     'route'     => 'admin.cache.clear',
                     'title'     => "Clear Cache",
                     'icon'      => "menu-icon las la-broom",
-                ])
+                ]) --}}
             </ul>
         </div>
     </div>

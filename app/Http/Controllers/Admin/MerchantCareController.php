@@ -27,6 +27,7 @@ use App\Notifications\User\SendMail;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Notification;
 use Jenssegers\Agent\Agent;
 
@@ -479,5 +480,79 @@ class MerchantCareController extends Controller
         }
 
         return back()->with(['success' => [__("Transaction success")]]);
+    }
+
+        /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+
+        // dd($request->all());
+        $validator = Validator::make($request->all(), [
+            'firstname'         => "required|string|max:60",
+            'lastname'          => "required|string|max:60",
+            'username'          => "required|string|unique:admins,username|alpha_dash|max:25",
+            'email'             => "required|email|unique:admins,email",
+            'password'          => "required|min:8",
+            'mobile'             => "required|string|max:20|unique:admins,phone",
+            // 'image'             => "nullable|mimes:png,jpg,jpeg,webp,svg",
+            // 'role'              => "required|integer|exists:admin_roles,id|max:30",
+        ]);
+
+        if ($validator->fails()) {
+            return back()->withErrors($validator)->withInput()->with("modal", "admin-add");
+        }
+
+        $validated = $validator->validate();
+        $validated['password']      = Hash::make($validated['password']);
+        $validated['status']        = true;
+        $validated['mobile_code']        = 91;
+        $validated['full_mobile']        = "+91 ".$validated['mobile'] ;
+
+
+
+        // if ($request->hasFile("image")) {
+        //     try {
+        //         $image = get_files_from_fileholder($request, "image");
+        //         $upload_file = upload_files_from_path_dynamic($image, "admin-profile");
+        //         $validated['image'] = $upload_file;
+        //     } catch (Exception $e) {
+        //         return back()->with(['error' => [__("Ops! Failed to upload image.")]]);
+        //     }
+        // }
+
+        // $assign_role = $validated['role'] ?? "";
+        // $validated = Arr::except($validated,['role']);
+
+        try {
+            $created_admin_id = Merchant::insertGetId($validated);
+            $validated['password'] = $request->password;
+            try{
+                // Notification::route('mail',$validated['email'])->notify(new NewAdminCredential($validated));
+            }catch(Exception $e){
+
+                dd($e->getMessage());
+            }
+        } catch (Exception $e) {
+             dd($e->getMessage());
+            return back()->with(['error' => [__("Something went wrong! Please try again.")]]);
+        }
+
+        // try{
+        //     // assign role
+        //     AdminHasRole::create([
+        //         'admin_id'      => $created_admin_id,
+        //         'admin_role_id' => $assign_role,
+        //         'last_edit_by'  => Auth::user()->id,
+        //     ]);
+        // }catch(Exception $e) {
+        //     return back()->with(['error' => [__("Role assign failed!")]]);
+        // }
+
+        return back()->with(['success' => [__("New admin created successfully!")]]);
     }
 }

@@ -42,6 +42,8 @@ class BillPayController extends Controller
                 'size' => 500,
                 'page' =>0
             ], false);
+
+            dd($billers);
         }catch(Exception $e){
 
         }

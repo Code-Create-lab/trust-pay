@@ -146,8 +146,8 @@ class UtilityHelper{
         $access_token = $this->access_token;
 
         $base_url = $this->config['request_url'];
-
         $request_endpoint = $base_url . "/billers";
+
         $response = Http::withHeaders([
             'Authorization' => "Bearer " . $access_token,
             "Accept: application/com.reloadly.utilities-v1+json",
@@ -155,6 +155,8 @@ class UtilityHelper{
             throw new Exception($exception->getMessage());
         })->json();
 
+
+        // dd($response);
         if(!is_array($response)) throw new Exception(__("Something went wrong! Please try again."));
 
         // cache()->driver('file')->put($biller_cache_key, $response, 43200);
@@ -187,6 +189,8 @@ class UtilityHelper{
         if(!$this->access_token) $this->accessToken();
 
         $base_url = $this->config['request_url'];
+
+        dd($base_url);
         $endpoint = $base_url . "/pay";
 
         try{
