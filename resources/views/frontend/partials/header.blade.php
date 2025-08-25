@@ -35,7 +35,7 @@
                                 <li><a href="{{ url($item->url) }}" class="@if ($current_url == url($item->url)) active @endif"><span>{{ __($title->title) }}</span></a></li>
                             @endforeach
                             </ul>
-
+{{--
                             <div class="header-action">
                                 <div class="lang-select">
                                     @php
@@ -52,7 +52,7 @@
                                @else
                                <a href="{{ setRoute('user.login') }}" class="btn--base"><i class="las la-user-edit me-2"></i></i>{{ __("Login Now") }}</a>
                                @endauth
-                            </div>
+                            </div> --}}
                         </div>
                     </nav>
                 </div>
