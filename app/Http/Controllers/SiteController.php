@@ -33,7 +33,8 @@ class SiteController extends Controller
         $basic_settings = BasicSettings::first();
         $page_title = $basic_settings->site_title??"Home";
         $app_urls = AppSettings::first();
-        return view('frontend.index',compact('page_title','app_urls'));
+        // return view('frontend.index',compact('page_title','app_urls'));
+        return view('frontend.homepage',compact('page_title','app_urls'));
     }
     public function about(){
         $page_title = "About";
