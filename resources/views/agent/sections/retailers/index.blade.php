@@ -1,7 +1,10 @@
 @extends('agent.layouts.master')
 
 @push('css')
-
+<style>
+    .error-text { color: red; font-size: 0.9em; }
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 @endpush
 
 @section('breadcrumb')
@@ -47,7 +50,7 @@
                     <div class="dashboard-list-right">
                         <div class="dashboard-list-right-btn-area">
                             <a href="{{ setRoute('agent.retailer.recipient.edit',$data->id) }}" class="btn--base"><i class="fas fa-edit"></i></a>
-                            <button type="button" class="btn--base delete-btn " data-id="{{ $data->id }}" data-name="{{ $data->fullname }}"><i class="fas fa-trash"></i></button>
+                            <button type="button" class="btn--base delete-btn" data-id="{{ $data->id }}" data-name="{{ $data->fullname }}"><i class="fas fa-trash"></i></button>
                         </div>
                     </div>
                 </div>
@@ -70,7 +73,21 @@
 @endsection
 
 @push('script')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 <script>
+    // Initialize toastr with proper error handling
+    if (typeof toastr !== 'undefined') {
+        toastr.options = {
+            "closeButton": true,
+            "progressBar": true,
+            "positionClass": "toast-top-right",
+            "timeOut": "3000",
+            "extendedTimeOut": "1000"
+        };
+    } else {
+        console.error('Toastr not loaded');
+    }
+
     $(".delete-btn").click(function(e){
         e.preventDefault();
 
@@ -83,10 +100,17 @@
         var btnText = "Delete";
         var message = `Are you sure to delete <strong>${name}</strong>?`;
 
+        // Use your existing modal function
         openAlertModal(actionRoute, target, message, btnText, "DELETE");
 
         $(document).off("click", "#confirmBtn").on("click", "#confirmBtn", function(e){
             e.preventDefault();
+
+            // Show loading state in modal button
+            var confirmBtn = $(this);
+            var originalText = confirmBtn.html();
+            confirmBtn.html('<i class="fas fa-spinner fa-spin"></i> Processing...');
+            confirmBtn.prop('disabled', true);
 
             $.ajax({
                 url: actionRoute,
@@ -95,18 +119,54 @@
                     _token: "{{ csrf_token() }}"
                 },
                 success: function (response) {
+                    // Close the modal
+                    $('#alert-modal').modal('hide');
+                    
                     if (response.success) {
-                        toastr.success(response.message);
-
-                        setTimeout(function(){
+                        // Show toastr success message
+                        if (typeof toastr !== 'undefined') {
+                            toastr.success(response.message);
+                        } else {
+                            alert('Success: ' + response.message);
+                        }
+                        
+                        // Redirect to listing page after a short delay
+                        setTimeout(function() {
                             window.location.href = "{{ route('agent.retailer.recipient.index') }}";
                         }, 1500);
                     } else {
-                        toastr.error(response.message || "Something went wrong!");
+                        // Show error message
+                        if (typeof toastr !== 'undefined') {
+                            toastr.error(response.message || "Something went wrong!");
+                        } else {
+                            alert('Error: ' + (response.message || "Something went wrong!"));
+                        }
+                        // Restore button state
+                        confirmBtn.html(originalText);
+                        confirmBtn.prop('disabled', false);
                     }
                 },
-                error: function () {
-                    toastr.error("Server error!");
+                error: function (xhr) {
+                    // Close the modal
+                    $('#alert-modal').modal('hide');
+                    
+                    // Restore button state
+                    confirmBtn.html(originalText);
+                    confirmBtn.prop('disabled', false);
+                    
+                    if (xhr.status === 404) {
+                        if (typeof toastr !== 'undefined') {
+                            toastr.error("Retailer not found!");
+                        } else {
+                            alert('Error: Retailer not found!');
+                        }
+                    } else {
+                        if (typeof toastr !== 'undefined') {
+                            toastr.error("Server error!");
+                        } else {
+                            alert('Error: Server error!');
+                        }
+                    }
                 }
             });
         });

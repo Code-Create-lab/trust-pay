@@ -3,7 +3,11 @@
 @push('css')
 <style>
     .error-text { color: red; font-size: 0.9em; }
+    /* Toastr customization */
+    .toast-success { background-color: #51a351 !important; }
+    .toast-error { background-color: #bd362f !important; }
 </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 @endpush
 
 @section('breadcrumb')
@@ -94,8 +98,32 @@
 @endsection
 
 @push('script')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 <script>
 $(document).ready(function () {
+    // Initialize toastr with options
+    if (typeof toastr !== 'undefined') {
+        toastr.options = {
+            "closeButton": true,
+            "debug": false,
+            "newestOnTop": true,
+            "progressBar": true,
+            "positionClass": "toast-top-right",
+            "preventDuplicates": false,
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "3000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+        };
+    } else {
+        console.error('Toastr not loaded!');
+    }
+
     $('#retailerForm').on('submit', function (e) {
         e.preventDefault();
 
@@ -147,21 +175,70 @@ $(document).ready(function () {
 
         let formData = $(this).serialize();
 
+        // Show loading state
+        let submitBtn = $('.btn-loading');
+        let originalText = submitBtn.html();
+        submitBtn.prop('disabled', true).html('Updating... <i class="fas fa-spinner fa-spin ms-1"></i>');
+
         $.ajax({
             url: "{{ route('agent.retailer.recipient.update') }}",
             type: "POST",
             data: formData,
             success: function(response) {
-                if(response.success){
-                    toastr.success(response.message);
-                    window.location.href = "{{ route('agent.retailer.recipient.index') }}";
+                if(response && response.success){
+                    // Show success message with toastr
+                    if (typeof toastr !== 'undefined') {
+                        toastr.success(response.message, 'Success');
+                    } else {
+                        // Fallback alert if toastr not available
+                        alert('Success: ' + response.message);
+                    }
+                    
+                    // Redirect after a brief delay to show the message
+                    setTimeout(function() {
+                        window.location.href = "{{ route('agent.retailer.recipient.index') }}";
+                    }, 1500);
+                } else {
+                    // Handle unexpected response format
+                    if (typeof toastr !== 'undefined') {
+                        toastr.error("Update failed. Please try again.");
+                    } else {
+                        alert('Error: Update failed. Please try again.');
+                    }
+                    submitBtn.prop('disabled', false).html(originalText);
                 }
             },
-            error: function(xhr){
-                toastr.error("Something went wrong!");
+            error: function(xhr) {
+                // Handle validation errors
+                if (xhr.status === 422) {
+                    var errors = xhr.responseJSON.errors;
+                    $.each(errors, function(key, value) {
+                        $('.' + key + '_error').text(value[0]);
+                    });
+                    if (typeof toastr !== 'undefined') {
+                        toastr.error("Please fix the validation errors.");
+                    } else {
+                        alert('Error: Please fix the validation errors.');
+                    }
+                } else if (xhr.responseJSON && xhr.responseJSON.message) {
+                    // Show server error message
+                    if (typeof toastr !== 'undefined') {
+                        toastr.error(xhr.responseJSON.message);
+                    } else {
+                        alert('Error: ' + xhr.responseJSON.message);
+                    }
+                } else {
+                    // Generic error
+                    if (typeof toastr !== 'undefined') {
+                        toastr.error("Something went wrong! Please try again.");
+                    } else {
+                        alert('Error: Something went wrong! Please try again.');
+                    }
+                }
+                // Reset button state
+                submitBtn.prop('disabled', false).html(originalText);
             }
         });
-
     });
 });
 </script>

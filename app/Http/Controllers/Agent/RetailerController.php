@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Agent;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Validator;
 
 class RetailerController extends Controller
 {
@@ -68,7 +69,7 @@ class RetailerController extends Controller
 
     public function updateRetailer(Request $request)
     {
-        $request->validate([
+        $validator = Validator::make($request->all(), [
             'id'          => 'required|exists:users,id',
             'first_name'  => 'required|string|max:100',
             'last_name'   => 'required|string|max:100',
@@ -77,9 +78,16 @@ class RetailerController extends Controller
             'phone_number'=> 'required|string|max:15|unique:users,mobile,' . $request->id,
         ]);
 
+        if ($validator->fails()) {
+            return response()->json([
+                'success' => false,
+                'errors' => $validator->errors()
+            ], 422);
+        }
+
         $user = User::findOrFail($request->id);
 
-        // Form se update karna
+        // Update the user
         $user->firstname   = $request->first_name;
         $user->lastname    = $request->last_name;
         $user->email       = $request->email;
@@ -90,7 +98,11 @@ class RetailerController extends Controller
 
         $user->save();
 
-        return redirect()->route('agent.retailer.recipient.index')->with('success', 'Retailer updated successfully!');
+        // Always return JSON response for AJAX requests
+        return response()->json([
+            'success' => true,
+            'message' => 'Retailer updated successfully!'
+        ]);
     }
 
     public function deleteRetailer($id)
@@ -101,7 +113,7 @@ class RetailerController extends Controller
             return response()->json([
                 'success' => false,
                 'message' => 'Retailer not found!'
-            ], 404);
+            ], 404)->header('Content-Type', 'application/json');
         }
 
         $retailer->delete();
@@ -109,7 +121,6 @@ class RetailerController extends Controller
         return response()->json([
             'success' => true,
             'message' => 'Retailer deleted successfully!'
-        ]);
+        ])->header('Content-Type', 'application/json');
     }
-
 }
