@@ -22,6 +22,7 @@ use App\Http\Controllers\Agent\ReceiverRecipientController;
 use App\Http\Controllers\Agent\SenderRecipientController;
 use App\Http\Controllers\Agent\SupportTicketController;
 use App\Http\Controllers\Agent\WithdrawController;
+use App\Http\Controllers\Agent\RetailerController;
 
 Route::prefix("agent")->name("agent.")->group(function(){
     Route::post("info",[GlobalController::class,'userInfo'])->name('get.user.info');
@@ -168,6 +169,18 @@ Route::prefix("agent")->name("agent.")->group(function(){
         Route::get('send/remittance/{id}','sendRemittance')->name('send.remittance');
     });
 
+    Route::controller(RetailerController::class)->prefix('retailer')->name('retailer.recipient.')->group(function(){
+        Route::get('/retailers','index')->name('index');
+        Route::get('/add','addRetailer')->name('add');
+        Route::post('/add','storeRetailer');
+        Route::get('edit/{id}','editRetailer')->name('edit');
+        Route::put('update','updateRetailer')->name('update');
+        Route::delete('delete/{id}','deleteRetailer')->name('delete');
+        // Route::post('find/user','checkUser')->name('check.user');
+        // Route::post('get/create-input','getTrxTypeInputs')->name('create.get.input');
+        // Route::post('get/edit-input','getTrxTypeInputsEdit')->name('edit.get.input');
+        // Route::get('send/remittance/{id}','sendRemittance')->name('send.remittance');
+    });
      //Receiver Recipient
      Route::controller(ReceiverRecipientController::class)->prefix('receiver-recipient')->name('receiver.recipient.')->group(function(){
         Route::get('/','index')->name('index');
