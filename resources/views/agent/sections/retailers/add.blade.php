@@ -4,6 +4,7 @@
     <style>
         .error-text { color: red; font-size: 0.9em; }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 @endpush
 
 @section('breadcrumb')
@@ -65,7 +66,7 @@
 
                                     <!-- Submit -->
                                     <div class="col-xl-12 col-lg-12">
-                                        <button type="submit" class="btn--base w-100 btn-loading transfer">
+                                        <button type="submit" class="btn--base w-100 submitBtn">
                                             {{ __("Add Retailer") }} <i class="fas fa-plus-circle ms-1"></i>
                                         </button>
                                     </div>
@@ -82,6 +83,7 @@
 @endsection
 
 @push('script')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 <script>
 $(document).ready(function () {
     $('#retailerForm').on('submit', function (e) {
@@ -140,14 +142,14 @@ $(document).ready(function () {
             data: formData,
             success: function (response) {
                 if (response.success) {
-                    $('#formMessage').html(
-                        '<div class="alert alert-success">'+response.message+'</div>'
-                    );
+                    toastr.success(response.message);
                     $('#retailerForm')[0].reset();
+                    setTimeout(function () {
+                        window.location.href = "{{ route('agent.retailer.recipient.index') }}";
+                    }, 1500);
                 } else {
-                    $('#formMessage').html(
-                        '<div class="alert alert-danger">'+response.message+'</div>'
-                    );
+                    toastr.error(response.message);
+                    $('.submitBtn').attr('disabled',false);
                 }
             },
             error: function (xhr) {
@@ -156,10 +158,9 @@ $(document).ready(function () {
                     $.each(errors, function (key, value) {
                         $('.'+key+'_error').text(value[0]);
                     });
+                    $('.submitBtn').attr('disabled',false);
                 } else {
-                    $('#formMessage').html(
-                        '<div class="alert alert-danger">Something went wrong!</div>'
-                    );
+                    toastr.error("Something went wrong!");
                 }
             }
         });
