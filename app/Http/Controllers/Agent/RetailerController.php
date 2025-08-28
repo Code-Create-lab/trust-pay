@@ -11,9 +11,10 @@ class RetailerController extends Controller
 {
     public function index()
     {
+        $user = auth()->user();
         $page_title = __('My Retailers');
         $token = (object)session()->get('sender_remittance_token');
-        $retailers = User::orderByDesc("id")->paginate(12);
+        $retailers = User::where('refferal_user_id',$user->id)->orderByDesc("id")->paginate(12);
 
         return view('agent.sections.retailers.index',compact('page_title','retailers'));
     }
@@ -35,7 +36,6 @@ class RetailerController extends Controller
 
         $user = new User();
 
-        // Form se jo aa raha hai
         $user->firstname   = $request->first_name;
         $user->lastname    = $request->last_name;
         $user->email       = $request->email;
@@ -43,8 +43,7 @@ class RetailerController extends Controller
         $user->mobile      = $request->phone_number;
         $user->mobile_code   = '+91';
         $user->full_mobile   = $request->phone_number;
-        $user->refferal_user_id  = '3';
-        // Password auto generate
+        $user->refferal_user_id  = auth()->user()->id;
         $user->password    = bcrypt('Pass@1234');
 
         $user->save();
@@ -59,11 +58,7 @@ class RetailerController extends Controller
     public function editRetailer($id)
     {
         $page_title = __("Edit Retailer");
-
-        // id ke basis par data fetch karo
         $retailer = User::findOrFail($id);
-
-        // data ko view me bhejo
         return view('agent.sections.retailers.edit', compact('page_title', 'retailer'));
     }
 
@@ -87,7 +82,6 @@ class RetailerController extends Controller
 
         $user = User::findOrFail($request->id);
 
-        // Update the user
         $user->firstname   = $request->first_name;
         $user->lastname    = $request->last_name;
         $user->email       = $request->email;
@@ -98,7 +92,6 @@ class RetailerController extends Controller
 
         $user->save();
 
-        // Always return JSON response for AJAX requests
         return response()->json([
             'success' => true,
             'message' => 'Retailer updated successfully!'
@@ -117,10 +110,6 @@ class RetailerController extends Controller
         }
 
         $retailer->delete();
-
-        return response()->json([
-            'success' => true,
-            'message' => 'Retailer deleted successfully!'
-        ])->header('Content-Type', 'application/json');
+        return redirect()->back()->with('success','Retailer deleted successfully!');
     }
 }
