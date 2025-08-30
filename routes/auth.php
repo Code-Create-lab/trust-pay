@@ -113,7 +113,7 @@ Route::prefix('merchant')->name('merchant.')->group(function(){
     });
 });
 // //agents
-Route::prefix('agent')->name('agent.')->group(function(){
+Route::prefix('distributor')->name('agent.')->group(function(){
     Route::get('/',function(){
         return redirect()->route('agent.login');
     });
