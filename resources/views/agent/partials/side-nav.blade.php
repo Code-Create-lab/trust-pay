@@ -1,4 +1,3 @@
-
 <div class="sidebar">
     <div class="sidebar-inner">
         <div class="sidebar-menu-inner-wrapper">
@@ -19,7 +18,7 @@
                             <span class="menu-title">{{ __("Dashboard") }}</span>
                         </a>
                     </li>
-                    <!-- @if(module_access('agent-receive-money',$module)->status)
+                    @if(module_access('agent-receive-money',$module)->status)
                         <li class="sidebar-menu-item">
                             <a href="{{ setRoute('agent.receive.money.index') }}">
                                 <i class="menu-icon fas fa-receipt"></i>
@@ -83,14 +82,14 @@
                             <span class="menu-title">{{ __("Remittance") }}</span>
                         </a>
                     </li>
-                    @endif -->
+                    @endif
                     <li class="sidebar-menu-item">
                         <a href="{{ setRoute('agent.retailer.recipient.index') }}">
                             <i class="menu-icon fas fa-user-edit"></i>
                             <span class="menu-title">{{ __("Add Retailer") }}</span>
                         </a>
                     </li>
-                    <!-- <li class="sidebar-menu-item">
+                    <li class="sidebar-menu-item">
                         <a href="{{ setRoute('agent.sender.recipient.index') }}">
                             <i class="menu-icon fas fa-user-edit"></i>
                             <span class="menu-title">{{ __("Saved My Sender") }}</span>
@@ -120,7 +119,7 @@
                             <i class="menu-icon fas fa-qrcode"></i>
                             <span class="menu-title">{{ __("2FA Security") }}</span>
                         </a>
-                    </li> -->
+                    </li>
                     <li class="sidebar-menu-item">
                         <a href="javascript:void(0)" class="logout-btn">
                             <i class="menu-icon fas fa-sign-out-alt"></i>
@@ -130,7 +129,7 @@
                 </ul>
             </div>
         </div>
-        <!-- <div class="sidebar-doc-box bg_img" data-background="{{ asset('frontend/') }}/images/element/support.jpg">
+        <div class="sidebar-doc-box bg_img" data-background="{{ asset('frontend/') }}/images/element/support.jpg">
             <div class="sidebar-doc-icon">
                 <i class="las la-question-circle"></i>
             </div>
@@ -141,7 +140,7 @@
                     <a href="{{ setRoute('agent.support.ticket.index') }}" class="btn--base w-100">{{ __("Get Support") }}</a>
                 </div>
             </div>
-        </div> -->
+        </div>
     </div>
 </div>
 
