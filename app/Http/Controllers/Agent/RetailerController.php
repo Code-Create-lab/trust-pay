@@ -45,6 +45,8 @@ class RetailerController extends Controller
         $user->full_mobile   = $request->phone_number;
         $user->refferal_user_id  = auth()->user()->id;
         $user->password    = bcrypt('Pass@1234');
+        $user->email_verified  = 1;
+        $user->email_verified_at  = now();
 
         $user->save();
 
