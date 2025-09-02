@@ -37,7 +37,7 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 @include('frontend.developer.partials.assets.footer-asset')
-@include('frontend.partials.extensions.tawk-to')
+{{-- @include('frontend.partials.extensions.tawk-to') --}}
 
 @stack('script')
 
