@@ -18,7 +18,7 @@
 
 @yield("content")
 @include('partials.footer-asset')
-@include('frontend.partials.extensions.tawk-to')
+<!-- @include('frontend.partials.extensions.tawk-to') -->
 
 @stack('script')
 
