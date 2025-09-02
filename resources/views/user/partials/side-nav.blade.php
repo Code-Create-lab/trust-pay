@@ -19,7 +19,7 @@
                             <span class="menu-title">{{ __("Dashboard") }}</span>
                         </a>
                     </li>
-                    @if(module_access('send-money',$module)->status)
+                    <!-- @if(module_access('send-money',$module)->status)
                     <li class="sidebar-menu-item">
                         <a href="{{ setRoute('user.send.money.index') }}">
                             <i class="menu-icon fas fa-paper-plane"></i>
@@ -130,7 +130,7 @@
                             <span class="menu-title">{{ __("Gift Card") }}</span>
                         </a>
                     </li>
-                    @endif
+                    @endif -->
                     @if(module_access('bill-pay',$module)->status)
                     <li class="sidebar-menu-item">
                         <a href="{{ setRoute('user.bill.pay.index') }}">
@@ -147,7 +147,7 @@
                         </a>
                     </li>
                     @endif
-                    <li class="sidebar-menu-item">
+                    <!-- <li class="sidebar-menu-item">
                         <a href="{{ setRoute('user.transactions.index') }}">
                             <i class="menu-icon fas fa-arrows-alt-h"></i>
                             <span class="menu-title">{{ __("Transactions") }}</span>
@@ -164,7 +164,7 @@
                             <i class="menu-icon fas fa-qrcode"></i>
                             <span class="menu-title">{{ __("2FA Security") }}</span>
                         </a>
-                    </li>
+                    </li> -->
                     <li class="sidebar-menu-item">
                         <a href="javascript:void(0)" class="logout-btn">
                             <i class="menu-icon fas fa-sign-out-alt"></i>
@@ -174,7 +174,7 @@
                 </ul>
             </div>
         </div>
-        <div class="sidebar-doc-box bg_img" data-background="{{ asset('frontend/') }}/images/element/support.jpg">
+        <!-- <div class="sidebar-doc-box bg_img" data-background="{{ asset('frontend/') }}/images/element/support.jpg">
             <div class="sidebar-doc-icon">
                 <i class="las la-question-circle"></i>
             </div>
@@ -185,7 +185,7 @@
                     <a href="{{ setRoute('user.support.ticket.index') }}" class="btn--base w-100">{{ __("Get Support") }}</a>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 </div>
 @push('script')
