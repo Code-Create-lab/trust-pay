@@ -24,7 +24,7 @@ use App\Http\Controllers\Agent\SupportTicketController;
 use App\Http\Controllers\Agent\WithdrawController;
 use App\Http\Controllers\Agent\RetailerController;
 
-Route::prefix("agent")->name("agent.")->group(function(){
+Route::prefix("distributor")->name("agent.")->group(function(){
     Route::post("info",[GlobalController::class,'userInfo'])->name('get.user.info');
     Route::controller(DashboardController::class)->group(function(){
         Route::get('dashboard','index')->name('dashboard');

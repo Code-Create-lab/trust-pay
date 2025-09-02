@@ -29,7 +29,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xxl-3 col-xl-4 col-lg-6 col-md-6 col-sm-12 mb-20">
+                <!-- <div class="col-xxl-3 col-xl-4 col-lg-6 col-md-6 col-sm-12 mb-20">
                     <div class="dashbord-item">
                         <div class="dashboard-content">
                             <span class="sub-title">{{__("Total Receive Remittance")}}</span>
@@ -61,7 +61,7 @@
                             <i class="fas fa-credit-card"></i>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <div class="col-xxl-3 col-xl-4 col-lg-6 col-md-6 col-sm-12 mb-20">
                     <div class="dashbord-item">
                         <div class="dashboard-content">
@@ -84,7 +84,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xxl-3 col-xl-4 col-lg-6 col-md-6 col-sm-12 mb-20">
+                <!-- <div class="col-xxl-3 col-xl-4 col-lg-6 col-md-6 col-sm-12 mb-20">
                     <div class="dashbord-item">
                         <div class="dashboard-content">
                             <span class="sub-title">{{ __("Total Withdraw") }}</span>
@@ -116,11 +116,11 @@
                             <i class="fas fa-gift"></i>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
-    <div class="chart-area mt-30">
+    <!-- <div class="chart-area mt-30">
         <div class="row mb-20-none">
             <div class="col-xxl-7 col-xl-7 col-lg-7 mb-20">
                 <div class="chart-wrapper">
@@ -143,8 +143,8 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="dashboard-list-area mt-20">
+    </div> -->
+    <!-- <div class="dashboard-list-area mt-20">
         <div class="dashboard-header-wrapper">
             <h4 class="title">{{ __("Latest Transactions") }}</h4>
             <div class="dashboard-btn-wrapper">
@@ -156,7 +156,7 @@
         <div class="dashboard-list-wrapper">
             @include('user.components.transaction-log',compact("transactions"))
         </div>
-    </div>
+    </div> -->
 </div>
 @endsection
 @push('script')
