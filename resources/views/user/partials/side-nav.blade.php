@@ -51,7 +51,7 @@
                             <span class="menu-title">{{ __("request Money") }}</span>
                         </a>
                     </li>
-                    @endif
+                    @endif -->
                     @if(module_access('remittance-money',$module)->status)
                     <li class="sidebar-menu-item">
                         <a href="{{ setRoute('user.remittance.index') }}">
@@ -60,7 +60,23 @@
                         </a>
                     </li>
                     @endif
-                    @if(module_access('add-money',$module)->status)
+                    @if(module_access('remittance-money',$module)->status)
+                    <li class="sidebar-menu-item">
+                        <a href="#">
+                            <i class="menu-icon fas fa-coins"></i>
+                            <span class="menu-title">{{ __("Aadhaar(AEPS)") }}</span>
+                        </a>
+                    </li>
+                    @endif
+                    @if(module_access('remittance-money',$module)->status)
+                    <li class="sidebar-menu-item">
+                        <a href="#">
+                            <i class="menu-icon fas fa-coins"></i>
+                            <span class="menu-title">{{ __("mATM/Pos") }}</span>
+                        </a>
+                    </li>
+                    @endif
+               <!-- @if(module_access('add-money',$module)->status)
                     <li class="sidebar-menu-item">
                         <a href="{{ setRoute('user.add.money.index') }}">
                             <i class="menu-icon fas fa-plus-circle"></i>
