@@ -6705,6 +6705,11 @@ html {
        object-fit: cover;
   }
 
+  .dashboard-area.mt-30 {
+    border: 1px solid #c5c2c2;
+    padding: 20px;
+}
+
   .chart-wrapper {
     background: #EBEDEF;
     border: 1px solid #ded7e9;
