@@ -6708,6 +6708,7 @@ html {
   .dashboard-area.mt-30 {
     border: 1px solid #c5c2c2;
     padding: 20px;
+     border-radius: 8px; /* adjust the value as needed */
 }
 
   .chart-wrapper {
