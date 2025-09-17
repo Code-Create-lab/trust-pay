@@ -406,36 +406,36 @@
                             //         ]
                             //     ],
                             // ],
-                            // [
-                            //     'title'     => __("Agent Care"),
-                            //     'icon'      => "menu-icon las la-user-edit",
-                            //     'links'     => [
-                            //         [
-                            //             'title'     => "Active Agents",
-                            //             'route'     => "admin.agents.active",
-                            //         ],
-                            //         [
-                            //             'title'     => "Email unverified",
-                            //             'route'     => "admin.agents.email.unverified",
-                            //         ],
-                            //         [
-                            //             'title'     => "KYC Unverified",
-                            //             'route'     => "admin.agents.kyc.unverified",
-                            //         ],
-                            //         [
-                            //             'title'     => "All Agents",
-                            //             'route'     => "admin.agents.index",
-                            //         ],
-                            //         [
-                            //             'title'     => "Email To Agents",
-                            //             'route'     => "admin.agents.email.agents",
-                            //         ],
-                            //         [
-                            //             'title'     => "Banned Agents",
-                            //             'route'     => "admin.agents.banned",
-                            //         ]
-                            //     ],
-                            // ],
+                            [
+                                'title'     => __("Agent Care"),
+                                'icon'      => "menu-icon las la-user-edit",
+                                'links'     => [
+                                    [
+                                        'title'     => "Active Agents",
+                                        'route'     => "admin.agents.active",
+                                    ],
+                                    [
+                                        'title'     => "Email unverified",
+                                        'route'     => "admin.agents.email.unverified",
+                                    ],
+                                    [
+                                        'title'     => "KYC Unverified",
+                                        'route'     => "admin.agents.kyc.unverified",
+                                    ],
+                                    [
+                                        'title'     => "All Agents",
+                                        'route'     => "admin.agents.index",
+                                    ],
+                                    [
+                                        'title'     => "Email To Agents",
+                                        'route'     => "admin.agents.email.agents",
+                                    ],
+                                    [
+                                        'title'     => "Banned Agents",
+                                        'route'     => "admin.agents.banned",
+                                    ]
+                                ],
+                            ],
                             [
                                 'title'     => __("Distributor Care"),
                                 'icon'      => "menu-icon las la-user-edit",

@@ -1741,6 +1741,7 @@ function its_image(string $string) {
 function get_file_link($path_source, $name = null) {
     if($name == null) return false;
     $path = files_asset_path($path_source);
+    // dd($path,$name);
     $link = $path . "/" . $name;
     $dev_link = get_files_path($path_source) . "/" . $name;
     if(is_file($dev_link)) return $link;
