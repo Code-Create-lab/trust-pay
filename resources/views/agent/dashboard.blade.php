@@ -146,6 +146,71 @@
             </div>
         </div>
     </div>
+    <div class="dashboard-area mt-30">
+        <div class="row">
+            <div class="col-xxl-2 col-xl-4 col-lg-6 col-md-6 col-sm-12 mb-20">
+                <a href="{{route('user.transactions.index', 'bill-pay')}}">
+                    <div class="dashbord-item">
+                        <div class="dashboard-content">
+                            <span class="sub-title">Bill Payment</span>
+                            <!-- <h3 class="title"><span class="text--base">USD</span></h3> -->
+                        </div>
+                        <div class="dashboard-icon">
+                            <i class="fas fa-shopping-bag"></i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-xxl-2 col-xl-4 col-lg-6 col-md-6 col-sm-12 mb-20">
+                <a href="{{route('user.transactions.index', 'mobile-topup')}}">
+                    <div class="dashbord-item">
+                        <div class="dashboard-content">
+                            <span class="sub-title">Mobile TopUp</span>
+                        </div>
+                        <div class="dashboard-icon">
+                            <i class="fas fa-mobile"></i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-xxl-2 col-xl-4 col-lg-6 col-md-6 col-sm-12 mb-20">
+                <a href="{{route('user.transactions.index', 'bill-pay')}}">
+                    <div class="dashbord-item">
+                        <div class="dashboard-content">
+                            <span class="sub-title">Aadhaar(AEPS)</span>
+                        </div>
+                        <div class="dashboard-icon">
+                            <i class="fas fa-mobile"></i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-xxl-2 col-xl-4 col-lg-6 col-md-6 col-sm-12 mb-20">
+                <a href="{{route('user.transactions.index', 'bill-pay')}}">
+                <div class="dashbord-item">
+                    <div class="dashboard-content">
+                        <span class="sub-title">mATM(AEPS)</span>
+                    </div>
+                    <div class="dashboard-icon">
+                        <i class="fas fa-mobile"></i>
+                    </div>
+                </div>
+                </a>
+            </div>
+            <div class="col-xxl-2 col-xl-4 col-lg-6 col-md-6 col-sm-12 mb-20">
+                <a href="{{route('user.transactions.index', 'bill-pay')}}">
+                <div class="dashbord-item">
+                    <div class="dashboard-content">
+                        <span class="sub-title">Money Tranfer</span>
+                    </div>
+                    <div class="dashboard-icon">
+                        <i class="fas fa-mobile"></i>
+                    </div>
+                </div>
+                </a>
+            </div>
+        </div>
+    </div>
     <div class="chart-area mt-30">
         <div class="row mb-20-none">
             <div class="col-xxl-7 col-xl-7 col-lg-7 mb-20">
