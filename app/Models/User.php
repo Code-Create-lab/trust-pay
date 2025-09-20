@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Passport\HasApiTokens;
 use App\Traits\User\UserPartials;
+use App\Models\Transaction;
 
 class User extends Authenticatable
 {
@@ -253,5 +254,7 @@ class User extends Authenticatable
     public function modelGuardName() {
         return "web";
     }
-
+    public function transactions() {
+        return $this->hasMany(Transaction::class);
+    }
 }

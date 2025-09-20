@@ -37,6 +37,7 @@
                             <div class="dashboard-list-user-content">
                                 <h4 class="title">{{ @$data->fullname }}
                                     <span class="text-success">( {{@$data->username}})</span>
+                                    <span>(Commission: ₹{{ @$data->commission }})</span>
                                 </h4>
                                 <span class="sub-title text--warning">{{ @$data->email }}</span>
                             </div>

@@ -102,14 +102,14 @@
                             <i class="menu-icon fas fa-user-check"></i>
                             <span class="menu-title">{{ __("Saved My Receiver") }}</span>
                         </a>
-                    </li>
+                    </li> -->
                     <li class="sidebar-menu-item">
                         <a href="{{ setRoute('agent.transactions.index') }}">
                             <i class="menu-icon fas fa-arrows-alt-h"></i>
                             <span class="menu-title">{{ __("Transactions") }}</span>
                         </a>
                     </li>
-                    <li class="sidebar-menu-item">
+                    <!-- <li class="sidebar-menu-item">
                         <a href="{{ setRoute('agent.profits.index') }}">
                             <i class="menu-icon fas fa-hand-holding-usd"></i>
                             <span class="menu-title">{{ __("Profits Log") }}</span>

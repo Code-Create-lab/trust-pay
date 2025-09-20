@@ -14,8 +14,15 @@ class RetailerController extends Controller
         $user = auth()->user();
         $page_title = __('My Retailers');
         $token = (object)session()->get('sender_remittance_token');
-        $retailers = User::where('refferal_user_id',$user->id)->orderByDesc("id")->paginate(12);
+        $retailers = User::with('transactions')->where('refferal_user_id',$user->id)->orderByDesc("id")->paginate(12);
+        $retailers->getCollection()->transform(function ($retailer) {
+            $commission = $retailer->transactions->sum(function ($transaction) {
+                return $transaction->payable * 0.10;
+            });
 
+            $retailer->commission = $commission;
+            return $retailer;
+        });
         return view('agent.sections.retailers.index',compact('page_title','retailers'));
     }
 
