@@ -375,37 +375,37 @@
                     'group_title'       => __("Interface Panel"),
                     'group_links'       => [
                         'dropdown'      => [
-                            // [
-                            //     'title'     => __("User Care"),
-                            //     'icon'      => "menu-icon las la-user-edit",
-                            //     'links'     => [
-                            //         [
-                            //             'title'     => "Active Users",
-                            //             'route'     => "admin.users.active",
-                            //         ],
-                            //         [
-                            //             'title'     => "Email unverified",
-                            //             'route'     => "admin.users.email.unverified",
-                            //         ],
+                            [
+                                'title'     => __("Retailer Care"),
+                                'icon'      => "menu-icon las la-user-edit",
+                                'links'     => [
+                                    [
+                                        'title'     => "Active Retailer",
+                                        'route'     => "admin.users.active",
+                                    ],
+                                    [
+                                        'title'     => "Email unverified",
+                                        'route'     => "admin.users.email.unverified",
+                                    ],
 
-                            //         [
-                            //             'title'     => "KYC Unverified",
-                            //             'route'     => "admin.users.kyc.unverified",
-                            //         ],
-                            //         [
-                            //             'title'     => "All Users",
-                            //             'route'     => "admin.users.index",
-                            //         ],
-                            //         [
-                            //             'title'     => "Email To Users",
-                            //             'route'     => "admin.users.email.users",
-                            //         ],
-                            //         [
-                            //             'title'     => "Banned Users",
-                            //             'route'     => "admin.users.banned",
-                            //         ]
-                            //     ],
-                            // ],
+                                    [
+                                        'title'     => "KYC Unverified",
+                                        'route'     => "admin.users.kyc.unverified",
+                                    ],
+                                    [
+                                        'title'     => "All Retailer",
+                                        'route'     => "admin.users.index",
+                                    ],
+                                    [
+                                        'title'     => "Email To Retailer",
+                                        'route'     => "admin.users.email.users",
+                                    ],
+                                    [
+                                        'title'     => "Banned Retailer",
+                                        'route'     => "admin.users.banned",
+                                    ]
+                                ],
+                            ],
                             // [
                             //     'title'     => __("Agent Care"),
                             //     'icon'      => "menu-icon las la-user-edit",
