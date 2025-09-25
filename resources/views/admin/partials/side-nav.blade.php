@@ -412,67 +412,67 @@
                                     ]
                                 ],
                             ],
-                            // [
-                            //     'title'     => __("Agent Care"),
-                            //     'icon'      => "menu-icon las la-user-edit",
-                            //     'links'     => [
-                            //         [
-                            //             'title'     => "Active Agents",
-                            //             'route'     => "admin.agents.active",
-                            //         ],
-                            //         [
-                            //             'title'     => "Email unverified",
-                            //             'route'     => "admin.agents.email.unverified",
-                            //         ],
-                            //         [
-                            //             'title'     => "KYC Unverified",
-                            //             'route'     => "admin.agents.kyc.unverified",
-                            //         ],
-                            //         [
-                            //             'title'     => "All Agents",
-                            //             'route'     => "admin.agents.index",
-                            //         ],
-                            //         [
-                            //             'title'     => "Email To Agents",
-                            //             'route'     => "admin.agents.email.agents",
-                            //         ],
-                            //         [
-                            //             'title'     => "Banned Agents",
-                            //             'route'     => "admin.agents.banned",
-                            //         ]
-                            //     ],
-                            // ],
                             [
                                 'title'     => __("Distributor Care"),
                                 'icon'      => "menu-icon las la-user-edit",
                                 'links'     => [
                                     [
-                                        'title'     => "Active Distributor",
-                                        'route'     => "admin.merchants.active",
+                                        'title'     => "Active Distributors",
+                                        'route'     => "admin.agents.active",
                                     ],
                                     [
                                         'title'     => "Email unverified",
-                                        'route'     => "admin.users.email.unverified",
+                                        'route'     => "admin.agents.email.unverified",
                                     ],
-
                                     [
                                         'title'     => "KYC Unverified",
-                                        'route'     => "admin.merchants.kyc.unverified",
+                                        'route'     => "admin.agents.kyc.unverified",
                                     ],
                                     [
-                                        'title'     => "All Merchants",
-                                        'route'     => "admin.merchants.index",
+                                        'title'     => "All Distributors",
+                                        'route'     => "admin.agents.index",
                                     ],
                                     [
-                                        'title'     => "Email To Distributor",
-                                        'route'     => "admin.merchants.email.merchants",
+                                        'title'     => "Email To Distributors",
+                                        'route'     => "admin.agents.email.agents",
                                     ],
                                     [
-                                        'title'     => "Banned Distributor",
-                                        'route'     => "admin.merchants.banned",
+                                        'title'     => "Banned Distributors",
+                                        'route'     => "admin.agents.banned",
                                     ]
                                 ],
                             ],
+                            // [
+                            //     'title'     => __("Distributor Care"),
+                            //     'icon'      => "menu-icon las la-user-edit",
+                            //     'links'     => [
+                            //         [
+                            //             'title'     => "Active Distributor",
+                            //             'route'     => "admin.merchants.active",
+                            //         ],
+                            //         [
+                            //             'title'     => "Email unverified",
+                            //             'route'     => "admin.users.email.unverified",
+                            //         ],
+
+                            //         [
+                            //             'title'     => "KYC Unverified",
+                            //             'route'     => "admin.merchants.kyc.unverified",
+                            //         ],
+                            //         [
+                            //             'title'     => "All Merchants",
+                            //             'route'     => "admin.merchants.index",
+                            //         ],
+                            //         [
+                            //             'title'     => "Email To Distributor",
+                            //             'route'     => "admin.merchants.email.merchants",
+                            //         ],
+                            //         [
+                            //             'title'     => "Banned Distributor",
+                            //             'route'     => "admin.merchants.banned",
+                            //         ]
+                            //     ],
+                            // ],
                             // [
                             //     'title'             => __("Admin Care"),
                             //     'icon'              => "menu-icon las la-user-shield",
