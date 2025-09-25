@@ -10,4 +10,16 @@ class Commission extends Model
     use HasFactory;
 
     protected $guarded = [];
+
+
+    
+    public function getEditDataAttribute() {
+
+        $data = [
+            'name'      => $this->name,
+            'code'      => $this->value,
+        ];
+
+        return json_encode($data);
+    }
 }

@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\AppOnboardScreensController;
 use App\Http\Controllers\Admin\AppSettingsController;
 use App\Http\Controllers\Admin\BillPayMethodController;
 use App\Http\Controllers\Admin\BroadcastingController;
+use App\Http\Controllers\Admin\CommissionController;
 use App\Http\Controllers\Admin\ContactMessageController;
 use App\Http\Controllers\Admin\CookieController;
 use App\Http\Controllers\Admin\CountryRestrictionController;
@@ -77,6 +78,16 @@ Route::prefix('admin')->name('admin.')->group(function () {
     });
     // Setup Currency Section
     Route::controller(CurrencyController::class)->prefix('currency')->name('currency.')->group(function () {
+        Route::get('index', 'index')->name('index');
+        Route::post('store', 'store')->name('store');
+        Route::put('status/update', 'statusUpdate')->name('status.update');
+        Route::put('update', 'update')->name('update');
+        Route::delete('delete', 'delete')->name('delete');
+        Route::post('search', 'search')->name("search");
+    });
+
+    // Setup Commission Section
+    Route::controller(CommissionController::class)->prefix('commission')->name('commission.')->group(function () {
         Route::get('index', 'index')->name('index');
         Route::post('store', 'store')->name('store');
         Route::put('status/update', 'statusUpdate')->name('status.update');

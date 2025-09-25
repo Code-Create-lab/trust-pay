@@ -29,14 +29,20 @@
                     'title'     => "Dashboard",
                     'icon'      => "menu-icon las la-rocket",
                 ])
+            
 
                 {{-- Section Default --}}
-                {{-- @include('admin.components.side-nav.link-group',[
+                @include('admin.components.side-nav.link-group',[
                     'group_title'       => __("DEFAULT"),
                     'group_links'       => [
                         [
                             'title'     => "Setup Currency",
                             'route'     => "admin.currency.index",
+                            'icon'      => "menu-icon las la-coins",
+                        ],
+                        [
+                            'title'     => "Setup Commission",
+                            'route'     => "admin.commission.index",
                             'icon'      => "menu-icon las la-coins",
                         ],
                         [
@@ -65,7 +71,7 @@
                             'icon'      => "menu-icon las la-gift",
                         ],
                     ]
-                ]) --}}
+                ])
                 {{-- manage Bill Pay & Mobile top Up Methods  --}}
                 {{-- @include('admin.components.side-nav.link-group',[
                     'group_links'       => [
